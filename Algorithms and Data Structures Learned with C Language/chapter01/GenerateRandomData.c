@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define N 100
 
-void GenerateRandomData(int seed, int range, int data[], int mum);
+void GenerateRandomData(int seed, int range, int data[], int num);
 
 int main(void) {
     int data[N];
