@@ -66,7 +66,6 @@ int main(void)
                 ANSWER = rand() % 6 + 1;
                 i = 1;
 
-
                 while (i <= 3)
                 {
                     printf("\n＝＝　%d回目のチャレンジ　＝＝\n", i);
@@ -97,6 +96,7 @@ int main(void)
             }
 
             break;
+            
         case 2:
             continue_game = 1;
             while (continue_game)
