@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算機</title>
+    <style>
+        h1 {
+            font-size: 20px;           
+            margin-bottom: 20px; 
+            text-align: left; 
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+            width:200px;
+            padding:3px;
+            font-size:16px;
+            border:1px solid gray;
+            text-align:left;
+        }
+        output{
+            display:inline-block;
+            width:200px;
+            height:20px;
+            padding:3px;
+            font-size:16px;
+            border:1px solid gray;
+            text-align:left;
+        }
+        output:empty::before {
+            content: "結果"; 
+            color: #aaa;                          
+        }
+        button{
+            padding:3px;
+            font-size:16px;
+        }
+        .btn-wrap {
+            display: flex;          
+            width: 200px;            
+            gap: 8px;               
+        }
+        .btn-wrap button {
+            flex: 1;                
+            padding: 4px 0;         
+            box-sizing: border-box; 
+        }
+    </style>
+</head>
+<body>
+    <h1>私のオリジナル計算機</h1>
+
+    <!-- <input> -->
+    <p><input type="text" id="input1" placeholder="数字のみ"></p>
+    <p><input type="text" id="input2" placeholder="数字のみ"></p>
+
+    <!-- button -->
+    <div class="btn-wrap">
+        <button onclick="plus();">足し算</button>
+        <button onclick="minus();">引き算</button>
+        <button onclick="times();">掛け算</button>
+        <button onclick="divide();">割り算</button>
+    </div>
+
+    <!-- output -->
+    <!-- <p>結果： <span id="output"></span></p> -->
+    <!-- <p id="output">結果：</p> -->
+    <p><output id="output"></output></p>
+
+        <footer style="width: 220px;margin-top: 40px; font-size: 12px; color: #777;">
+        <p>使用説明:上の2つの入力欄に数字を入力してください。
+            4つのボタン（足し算・引き算・掛け算・割り算）のいずれかをクリックすると、
+            計算結果は「結果」欄に表示されます。<p>
+        </p>by CHENG CAN, with the help of ChatGPT.</p>
+    </footer>
+
+    <script>
+        const input1 = document.getElementById("input1");
+        const input2 = document.getElementById("input2");
+        const output = document.getElementById("output");
+
+        //founcton
+        function plus() {
+            let res_plus = Number(input1.value) + Number(input2.value);
+            output.innerHTML = res_plus;
+        }
+        function minus() {
+            let res_minus = Number(input1.value) - Number(input2.value);
+            output.innerHTML = res_minus;
+        }
+        function times() {
+            let res_times = Number(input1.value) * Number(input2.value);
+            output.innerHTML = res_times;
+        }
+        function divide() {
+            let res_divide = Number(input1.value) / Number(input2.value);
+            output.innerHTML = res_divide;
+        }
+    </script>
+</body>
+</html>
